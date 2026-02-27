@@ -1,0 +1,82 @@
+Combinaciones posibles:
+Alain: 559
+Frederick: 688
+Lizzeth: 425
+Sebastian: 629
+--------------------------
+Total: 2301
+
+Angel: 407
+Carlos: 747
+Daniel: 252
+Lizzeth: 425
+Pedro: 470
+--------------------------
+Total: 2301
+
+Angel: 407
+Daniel: 252
+Emiliano: 408
+Iker: 764
+Pedro: 470
+--------------------------
+Total: 2301
+
+Angel: 407
+Daniel: 252
+Emiliano: 408
+Sebastian: 629
+Uriel: 605
+--------------------------
+Total: 2301
+
+Angel: 407
+Emiliano: 408
+Farid: 223
+Rodrigo: 634
+Sebastian: 629
+--------------------------
+Total: 2301
+
+Edgardo: 981
+Emiliano: 408
+Farid: 223
+Luciano: 689
+--------------------------
+Total: 2301
+
+Elyanne: 934
+Emiliano: 408
+Hector: 959
+--------------------------
+Total: 2301
+
+Farid: 223
+Frederick: 688
+Gala: 965
+Lizzeth: 425
+--------------------------
+Total: 2301
+
+Farid: 223
+Iker: 764
+Jose: 709
+Uriel: 605
+--------------------------
+Total: 2301
+
+Gonzalo: 753
+Lizzeth: 425
+Mariano: 653
+Pedro: 470
+--------------------------
+Total: 2301
+
+Hector: 959
+Luciano: 689
+Mariano: 653
+--------------------------
+Total: 2301
+
+
+Total de combinaciones encontradas: 11

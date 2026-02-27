@@ -1,0 +1,17 @@
+Combinaciones posibles:
+Jesus: 123
+Alexis: 134
+Juan: 136
+Diego: 180
+--------------------------
+Total: 573
+
+Jesus: 123
+Kevin: 151
+Acdiel: 119
+Diego: 180
+--------------------------
+Total: 573
+
+
+Total de combinaciones encontradas: 2

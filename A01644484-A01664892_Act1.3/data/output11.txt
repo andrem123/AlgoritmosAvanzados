@@ -1,0 +1,59 @@
+Combinaciones posibles:
+Jonathan: 123
+Rodolfo: 136
+Yeudiel: 176
+Edgar: 145
+Adrian: 185
+--------------------------
+Total: 765
+
+Jonathan: 123
+Ivan: 119
+Yeudiel: 176
+Leonardo: 162
+Adrian: 185
+--------------------------
+Total: 765
+
+Jesus: 157
+Alan: 134
+Rodolfo: 136
+Yeudiel: 176
+Leonardo: 162
+--------------------------
+Total: 765
+
+Jesus: 157
+Angel: 151
+Rodolfo: 136
+Yeudiel: 176
+Edgar: 145
+--------------------------
+Total: 765
+
+Jesus: 157
+Angel: 151
+Ivan: 119
+Yeudiel: 176
+Leonardo: 162
+--------------------------
+Total: 765
+
+Alan: 134
+Angel: 151
+Ivan: 119
+Yeudiel: 176
+Adrian: 185
+--------------------------
+Total: 765
+
+Rodolfo: 136
+Ivan: 119
+Ana: 180
+Edgar: 145
+Adrian: 185
+--------------------------
+Total: 765
+
+
+Total de combinaciones encontradas: 7
