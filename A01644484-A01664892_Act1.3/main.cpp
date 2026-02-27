@@ -7,6 +7,21 @@
  *
  * Compilar: g++ -o main main.cpp
  * Ejecutar: ./main < inputFile.txt
+ *
+ * Referencias:
+ *  - Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009).
+ *    "Introduction to Algorithms" (3ra ed.). MIT Press.
+ *    Cap. 34: NP-Completeness — Subset-Sum Problem (pp. 1097-1101).
+ *
+ *  - Horowitz, E., & Sahni, S. (1974). "Computing Partitions with
+ *    Applications to the Knapsack Problem". Journal of the ACM, 21(2),
+ *    277-292. https://doi.org/10.1145/321812.321823
+ *
+ *  - Brassard, G., & Bratley, P. (1996). "Fundamentals of Algorithmics".
+ *    Prentice Hall. Cap. 9: Exploring Graphs — Backtracking.
+ *
+ *  - GeeksforGeeks. "Subset Sum Problem using Backtracking".
+ *    https://www.geeksforgeeks.org/subset-sum-backtracking-4/
  */
 
 #include <iostream>
