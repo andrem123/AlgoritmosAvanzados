@@ -1,3 +1,3 @@
-banana
-abcabc
-abcdef
+ATCGATCGATCG
+AAACCCGGGTTT
+ACGTACGT

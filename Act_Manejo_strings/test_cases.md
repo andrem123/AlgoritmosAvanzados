@@ -1,53 +1,48 @@
-# Casos de Prueba — Finding Unique Substrings
+# Casos de Prueba — Análisis de Marcadores Genéticos Únicos en ADN
 
-## Caso 1: `banana`
+## Caso 1: `ATCGATCGATCG`
 
-**Justificación:** Cadena con muchas repeticiones parciales ("an", "ana", "na", "a", "n"). 
-Permite verificar que el programa distingue correctamente entre subcadenas repetidas y únicas.
+**Justificación bioinformática:** Secuencia con patrón repetitivo `ATCG` (4 nucleótidos repetidos 3 veces).
+Simula regiones repetitivas del genoma (microsatélites / STRs). Las repeticiones internas
+harán que muchas subcadenas cortas aparezcan más de una vez, filtrando los falsos marcadores.
 
-**Subcadenas repetidas (NO deben aparecer):**
-- `"a"` aparece 3 veces → NO es única
-- `"an"` aparece 2 veces → NO es única  
-- `"ana"` aparece 2 veces → NO es única
-- `"n"` aparece 2 veces → NO es única
-- `"na"` aparece 2 veces → NO es única
-
-**Resultado esperado: 10 subcadenas únicas**
-```
-"anan", "anana", "b", "ba", "ban", "bana", "banan", "banana", "nan", "nana"
-```
+- **Longitud:** 12 nt
+- **GC Content:** 50.0% (equilibrado)
+- Solo las subcadenas que cruzan los límites de la repetición de manera asimétrica serán únicas.
+- Subcadenas como `"ATC"`, `"TCG"`, `"CGA"`, `"GAT"` aparecen múltiples veces → NO son únicas.
 
 ---
 
-## Caso 2: `abcabc`
+## Caso 2: `AAACCCGGGTTT`
 
-**Justificación:** Cadena formada por una repetición exacta (`"abc"` + `"abc"`).
-Verifica que las subcadenas compartidas por ambas mitades (`"a"`, `"b"`, `"c"`, `"ab"`, `"bc"`, `"abc"`) 
-se excluyan correctamente al aparecer más de una vez.
+**Justificación bioinformática:** Secuencia con bloques homopoliméricos (runs de la misma base).
+Representa regiones de baja complejidad comunes en genomas reales. El algoritmo debe
+identificar correctamente que runs internos como `"AAA"`, `"CCC"`, etc. son únicos
+(aparecen una sola vez cada bloque).
 
-**Subcadenas repetidas (NO deben aparecer):**
-- `"a"`, `"b"`, `"c"` aparecen 2 veces cada una
-- `"ab"`, `"bc"`, `"abc"` aparecen 2 veces cada una
-
-**Resultado esperado: 9 subcadenas únicas**
-```
-"abca", "abcab", "abcabc", "bca", "bcab", "bcabc", "ca", "cab", "cabc"
-```
+- **Longitud:** 12 nt
+- **GC Content:** 50.0%
+- Las subcadenas que están completamente dentro de un bloque son interesantes
+  porque cada base solo aparece en un bloque contiguo.
 
 ---
 
-## Caso 3: `abcdef`
+## Caso 3: `ACGTACGT`
 
-**Justificación:** Cadena sin ningún carácter repetido. 
-Cada subcadena posible aparece exactamente una vez, por lo que TODAS son únicas.
-El total de subcadenas de una cadena de longitud n es n*(n+1)/2 = 6*7/2 = 21.
+**Justificación bioinformática:** Secuencia palindrómica corta (ACGT repetido).
+En genomas reales, los palíndromos son sitios de reconocimiento de enzimas de restricción.
+Verifica comportamiento con repeticiones exactas de 4 nt, donde muchas subcadenas se
+duplican entre las dos mitades.
 
-**Resultado esperado: 21 subcadenas únicas**
-```
-"a", "ab", "abc", "abcd", "abcde", "abcdef",
-"b", "bc", "bcd", "bcde", "bcdef",
-"c", "cd", "cde", "cdef",
-"d", "de", "def",
-"e", "ef",
-"f"
-```
+- **Longitud:** 8 nt
+- **GC Content:** 50.0%
+- Subcadenas repetidas (NO marcadores): `"A"`, `"C"`, `"G"`, `"T"`, `"AC"`, `"CG"`, `"GT"`, `"ACG"`, `"CGT"`, `"ACGT"`
+- Solo las subcadenas que cruzan la frontera entre las dos repeticiones serán únicas.
+
+---
+
+## Notas sobre el filtro de longitud
+
+El programa filtra marcadores en el rango **[3, 8] nucleótidos** para las secuencias de demo.
+En aplicaciones reales de PCR, los primers tienen entre 18-25 nucleótidos. El rango corto
+se usa aquí para que los resultados sean visibles con secuencias de entrada cortas.
