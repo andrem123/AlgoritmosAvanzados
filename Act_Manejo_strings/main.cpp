@@ -77,17 +77,25 @@ vector<string> findUniqueSubstrings(const string &s) {
     int n = s.size();
     if (n == 0) return {};
 
+    // Se construye el Suffix Array (arreglo de sufijos)
+    // Ordena todos los sufijos de la cadena lexicograficamente
     vector<int> sa  = buildSuffixArray(s);
+
+    // Se construye el LCP Array (arreglo de prefijos comunes mas largos)
+    // Para cada par de sufijos consecutivos en el SA, calcula cuantos
+    // caracteres comparten al inicio (prefijo comun)
     vector<int> lcp = buildLCPArray(s, sa);
 
     vector<string> result;
 
     for (int i = 0; i < n; i++) {
-        int lcpPrev = lcp[i];
-        int lcpNext = (i + 1 < n) ? lcp[i + 1] : 0;
+        // Usamos el LCP para saber cuanto comparte este sufijo con el anterior y siguiente
+        int lcpPrev = lcp[i];                         // prefijo comun con el sufijo anterior en el SA
+        int lcpNext = (i + 1 < n) ? lcp[i + 1] : 0;  // prefijo comun con el sufijo siguiente en el SA
 
+        // Si una subcadena tiene longitud > ambos LCP, entonces es unica
         int minLen = max(lcpPrev, lcpNext) + 1;
-        int maxLen = n - sa[i];
+        int maxLen = n - sa[i];  // longitud maxima del sufijo en posicion sa[i]
 
         for (int len = minLen; len <= maxLen; len++)
             result.push_back(s.substr(sa[i], len));
